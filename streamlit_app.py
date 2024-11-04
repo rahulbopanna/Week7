@@ -13,7 +13,7 @@ st.title("Airline Experience Feedback")
 user_experience = st.text_input("Share with us your experience of the latest trip:")
 
 # Load API Key securely from Streamlit secrets
-os.environ["OPENAI_API_KEY"] = st.secrets["IS883-OpenAIKey-RV"]
+os.environ["OPENAI_API_KEY"] = st.secrets["OpenAIKey"]
 
 # Initialize OpenAI client
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))

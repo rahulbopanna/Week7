@@ -2,6 +2,8 @@ import streamlit as st
 from langchain.prompts import PromptTemplate
 from langchain.chains import LLMChain
 from langchain.chat_models import ChatOpenAI
+import os
+from openai import OpenAI
 
 st.title("Airline Experience Feedback")
 
@@ -9,7 +11,7 @@ st.title("Airline Experience Feedback")
 user_experience = st.text_input("Share with us your experience of the latest trip:")
 
 # Load API Key securely from Streamlit secrets
-os.environ["OPENAI_API_KEY"] = st.secrets["OpenAI"]["OpenAIkey"]
+os.environ["OPENAI_API_KEY"] = st.secrets["OpenAIKey"]
 
 # Initialize OpenAI client
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
